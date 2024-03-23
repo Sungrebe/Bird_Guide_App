@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'screens/camera_screen.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -11,6 +13,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      routes: {
+        '/camera_screen':(context) => const CameraScreen()
+      },
       theme: ThemeData(fontFamily: 'Work Sans'),
       home: const MyHomePage(),
     );
@@ -70,7 +75,9 @@ class _MyHomePageState extends State<MyHomePage> {
                       backgroundColor: Colors.blue.shade400,
                       shape: const RoundedRectangleBorder(),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/camera_screen');
+                    },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
