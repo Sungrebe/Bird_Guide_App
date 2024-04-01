@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'screens/camera_screen.dart';
+import 'screens/take_photo_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       routes: {
-        '/camera_screen':(context) => const CameraScreen()
+        '/camera_screen':(context) => const TakePhotoScreen()
       },
       theme: ThemeData(fontFamily: 'Work Sans'),
       home: const MyHomePage(),

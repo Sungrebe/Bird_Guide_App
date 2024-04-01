@@ -47,5 +47,9 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Bird Guide needs access to your device camera for taking photos.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Bird Guide needs access to your device camera for taking photos.</string>
 </dict>
 </plist>
