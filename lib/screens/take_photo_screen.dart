@@ -12,6 +12,9 @@ class _TakePhotoScreenState extends State<TakePhotoScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Bird Guide'),
+      ),
       body: FutureBuilder(
         future: availableCameras(),
         builder: (context, snapshot) {
@@ -64,8 +67,34 @@ class _DeviceCameraState extends State<DeviceCamera> {
     return FutureBuilder(
       future: _controller.initialize(), 
       builder: (context, snapshot) {
-        return CameraPreview(_controller);
+        return Stack(
+          alignment: Alignment.bottomCenter,
+          children: [
+            CameraPreview(_controller),
+            Padding(
+              padding: const EdgeInsets.all(15),
+              child: RawMaterialButton(
+                onPressed: () {
+                  _controller.takePicture().then((img) {
+                    Navigator.pushNamed(context, '/review_photo_screen', arguments: ImageArguments(img));
+                  });
+                },
+                fillColor: Colors.white,
+                padding: const EdgeInsets.all(40),
+                shape: const CircleBorder(),
+              ),
+            ),
+          ],
+        );
       },
     );
   }
+}
+
+class ImageArguments {
+  final XFile image;
+
+  XFile getImage() => image;
+
+  ImageArguments(this.image);
 }

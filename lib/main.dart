@@ -1,3 +1,4 @@
+import 'package:bird_guide_app/screens/review_photo_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'screens/take_photo_screen.dart';
@@ -14,7 +15,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       routes: {
-        '/camera_screen':(context) => const TakePhotoScreen()
+        '/camera_screen': (context) => const TakePhotoScreen(),
+        '/review_photo_screen': (content) => const ReviewPhotoScreen()
       },
       theme: ThemeData(fontFamily: 'Work Sans'),
       home: const MyHomePage(),
